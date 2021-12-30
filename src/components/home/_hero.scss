@@ -1,0 +1,50 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../assets/main-bcg.jpeg') center/cover;
+
+  & > * {
+    color: $white;
+    letter-spacing: 0.1em;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: 3rem;
+
+    @include respond-to('small') {
+      font-size: 4rem;
+    }
+
+    @include respond-to('medium') {
+      font-size: 5.5rem;
+    }
+  }
+
+  &__desc {
+    margin-top: 0.3em;
+    font-size: 1.5rem;
+
+    @include respond-to('medium') {
+      margin-top: 0;
+      font-size: 2.7rem;
+    }
+  }
+
+  &__shop-btn {
+    display: inline-block;
+    padding: 0.8em;
+    border: 1px solid $white;
+    border-radius: 5px;
+    margin-top: 1.5em;
+    color: $white;
+    font-size: 0.9rem;
+  }
+
+  @include respond-to('medium') {
+    font-size: 1.5rem;
+  }
+}
