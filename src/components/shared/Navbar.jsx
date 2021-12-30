@@ -3,11 +3,15 @@ import comfyLogoBlack from '../../assets/comfy-logo-black.svg'
 
 import { FaBars, FaShoppingCart } from 'react-icons/fa'
 
-function Navbar({ dark }) {
+function Navbar({ dark, toggleSidebar }) {
   return (
     <nav className='navbar'>
       <div className='container navbar__container'>
-        <button className='navbar__open-btn' type='button'>
+        <button
+          className='navbar__open-btn'
+          type='button'
+          onClick={toggleSidebar}
+        >
           <FaBars />
         </button>
         <ul className={`navbar__links ${dark ? 'navbar__links--dark' : ''}`}>
