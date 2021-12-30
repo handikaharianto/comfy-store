@@ -1,6 +1,11 @@
 @import './variables';
-@import './global';
 @import './breakpoints';
+@import './global';
 
+@import '../components/shared/section';
 @import '../components/shared/navbar';
+@import '../components/shared/product';
+@import '../components/shared/loader';
+
 @import '../components/home/hero';
+@import '../components/home/featuredProducts';

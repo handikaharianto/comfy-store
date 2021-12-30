@@ -28,3 +28,25 @@ a {
   max-width: 1170px;
   margin: 0 auto;
 }
+
+.btn {
+  display: block;
+  width: 11rem;
+  padding: 0.7em 1.4em;
+  border: transparent;
+  border-radius: 5px;
+  background-color: $brown;
+  color: $white;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s linear;
+
+  @include respond-to('small') {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    background-color: $light-brown;
+    color: $black;
+  }
+}
