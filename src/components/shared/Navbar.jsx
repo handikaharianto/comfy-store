@@ -7,7 +7,7 @@ function Navbar({ dark }) {
   return (
     <nav className='navbar'>
       <div className='container navbar__container'>
-        <button className='navbar__nav-btn' type='button'>
+        <button className='navbar__open-btn' type='button'>
           <FaBars />
         </button>
         <ul className={`navbar__links ${dark ? 'navbar__links--dark' : ''}`}>
