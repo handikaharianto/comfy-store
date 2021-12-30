@@ -6,7 +6,7 @@ import { FaBars, FaShoppingCart } from 'react-icons/fa'
 function Navbar({ dark }) {
   return (
     <nav className='navbar'>
-      <div className='navbar__inner-wrapper'>
+      <div className='container navbar__container'>
         <button className='navbar__nav-btn' type='button'>
           <FaBars />
         </button>
