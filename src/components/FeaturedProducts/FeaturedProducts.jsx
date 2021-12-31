@@ -1,3 +1,4 @@
+import React from 'react'
 import Product from '../shared/Product/Product'
 import Section from '../shared/Section/Section'
 import Loader from '../shared/Loader/Loader'
@@ -21,4 +22,4 @@ function FeaturedProducts({ products, isLoading }) {
   )
 }
 
-export default FeaturedProducts
+export default React.memo(FeaturedProducts)
