@@ -1,6 +1,6 @@
-import Product from '../shared/Product'
-import Section from '../shared/Section'
-import Loader from '../shared/Loader'
+import Product from '../shared/Product/Product'
+import Section from '../shared/Section/Section'
+import Loader from '../shared/Loader/Loader'
 
 function FeaturedProducts({ products, isLoading }) {
   return (

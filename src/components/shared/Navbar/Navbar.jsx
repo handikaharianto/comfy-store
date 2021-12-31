@@ -1,5 +1,5 @@
-import comfyLogoWhite from '../../assets/comfy-logo-white.svg'
-import comfyLogoBlack from '../../assets/comfy-logo-black.svg'
+import comfyLogoWhite from '../../../assets/comfy-logo-white.svg'
+import comfyLogoBlack from '../../../assets/comfy-logo-black.svg'
 
 import { FaBars, FaShoppingCart } from 'react-icons/fa'
 

@@ -2,11 +2,12 @@
 @import './breakpoints';
 @import './global';
 
-@import '../components/shared/section';
-@import '../components/shared/navbar';
-@import '../components/shared/product';
-@import '../components/shared/loader';
-@import '../components/shared/sidebar';
+@import '../components/shared/Section/section';
+@import '../components/shared/Navbar/navbar';
+@import '../components/shared/Product/product';
+@import '../components/shared/Loader/loader';
+@import '../components/shared/Sidebar/sidebar';
+@import '../components/shared/ShoppingCart/shoppingCart';
 
-@import '../components/home/hero';
-@import '../components/home/featuredProducts';
+@import '../components/Hero/hero';
+@import '../components/FeaturedProducts/featuredProducts';

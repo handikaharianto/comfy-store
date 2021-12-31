@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
 
-import FeaturedProducts from './components/home/FeaturedProducts'
-import Hero from './components/home/Hero'
-import Navbar from './components/shared/Navbar'
-
+import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts'
+import Hero from './components/Hero/Hero'
+import Navbar from './components/shared/Navbar/Navbar'
+import Sidebar from './components/shared/Sidebar/Sidebar'
 import getData from './api/api'
-import Sidebar from './components/shared/Sidebar'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
