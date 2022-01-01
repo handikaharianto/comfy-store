@@ -26,13 +26,13 @@ function Navbar({ dark, toggleSidebar, toggleShoppingCart, totalCart }) {
             <Link to='/about'>About</Link>
           </li>
         </ul>
-        <a className='navbar__logo' href='/'>
+        <Link className='navbar__logo' to='/'>
           <img
             className='navbar__logo-img'
             src={dark ? comfyLogoBlack : comfyLogoWhite}
             alt='Comfy Store'
           />
-        </a>
+        </Link>
         <button
           className={`navbar__cart-btn ${dark ? 'navbar__cart-btn--dark' : ''}`}
           type='button'
