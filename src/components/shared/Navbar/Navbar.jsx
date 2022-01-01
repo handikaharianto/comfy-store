@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import comfyLogoWhite from '../../../assets/comfy-logo-white.svg'
 import comfyLogoBlack from '../../../assets/comfy-logo-black.svg'
 
@@ -16,13 +17,13 @@ function Navbar({ dark, toggleSidebar, toggleShoppingCart, totalCart }) {
         </button>
         <ul className={`navbar__links ${dark ? 'navbar__links--dark' : ''}`}>
           <li className='navbar__link'>
-            <a href='/home'>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li className='navbar__link'>
-            <a href='/products'>Products</a>
+            <Link to='/products'>Products</Link>
           </li>
           <li className='navbar__link'>
-            <a href='/about'>About</a>
+            <Link to='/about'>About</Link>
           </li>
         </ul>
         <a className='navbar__logo' href='/'>

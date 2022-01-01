@@ -2,6 +2,7 @@ import React from 'react'
 import Product from '../shared/Product/Product'
 import Section from '../shared/Section/Section'
 import Loader from '../shared/Loader/Loader'
+import { Link } from 'react-router-dom'
 
 function FeaturedProducts({ products, isLoading, addToShoppingCart }) {
   return (
@@ -21,9 +22,9 @@ function FeaturedProducts({ products, isLoading, addToShoppingCart }) {
           })
         )}
       </div>
-      <a className='btn featured__products-btn' href='/products'>
+      <Link className='btn featured__products-btn' to='/products'>
         ALL PRODUCTS
-      </a>
+      </Link>
     </Section>
   )
 }
