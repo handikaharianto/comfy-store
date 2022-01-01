@@ -1,7 +1,7 @@
 import { FaSearch, FaShoppingCart } from 'react-icons/fa'
 import formatPrice from '../../../utils/formatPrice'
 
-function Product({ id, fields }) {
+function Product({ id, fields, addToShoppingCart }) {
   const {
     name,
     price,
@@ -16,7 +16,11 @@ function Product({ id, fields }) {
           <a className='product__details-btn' href={`/${id}`}>
             <FaSearch />
           </a>
-          <button className='product__cart-btn' type='button'>
+          <button
+            className='product__cart-btn'
+            type='button'
+            onClick={() => addToShoppingCart(id)}
+          >
             <FaShoppingCart />
           </button>
         </div>

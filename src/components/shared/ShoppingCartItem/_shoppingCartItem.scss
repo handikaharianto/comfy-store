@@ -1,0 +1,51 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+
+  &__img {
+    width: 80px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+  }
+
+  &__price {
+    margin: 0.2em 0 0.2em 0;
+    color: $dark-gray;
+    font-size: 0.8rem;
+  }
+
+  &__remove-btn {
+    border: transparent;
+    background-color: transparent;
+    color: $gray;
+    letter-spacing: 0.1em;
+  }
+
+  &__quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &__amount {
+    font-size: 0.9rem;
+  }
+
+  &__increase-btn,
+  &__decrease-btn {
+    border: transparent;
+    background-color: transparent;
+    color: $brown;
+    font-size: 1rem;
+  }
+}

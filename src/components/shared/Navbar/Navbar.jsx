@@ -3,7 +3,7 @@ import comfyLogoBlack from '../../../assets/comfy-logo-black.svg'
 
 import { FaBars, FaShoppingCart } from 'react-icons/fa'
 
-function Navbar({ dark, toggleSidebar }) {
+function Navbar({ dark, toggleSidebar, toggleShoppingCart, totalCart }) {
   return (
     <nav className='navbar'>
       <div className='container navbar__container'>
@@ -35,9 +35,10 @@ function Navbar({ dark, toggleSidebar }) {
         <button
           className={`navbar__cart-btn ${dark ? 'navbar__cart-btn--dark' : ''}`}
           type='button'
+          onClick={toggleShoppingCart}
         >
           <FaShoppingCart />
-          <span className='navbar__item-total'>0</span>
+          <span className='navbar__item-total'>{totalCart}</span>
         </button>
       </div>
     </nav>

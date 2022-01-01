@@ -3,7 +3,7 @@ import Product from '../shared/Product/Product'
 import Section from '../shared/Section/Section'
 import Loader from '../shared/Loader/Loader'
 
-function FeaturedProducts({ products, isLoading }) {
+function FeaturedProducts({ products, isLoading, addToShoppingCart }) {
   return (
     <Section title='Featured' name='featured'>
       <div className='container featured__items'>
@@ -11,7 +11,13 @@ function FeaturedProducts({ products, isLoading }) {
           <Loader />
         ) : (
           products.slice(0, 3).map((item) => {
-            return <Product key={item.id} {...item} />
+            return (
+              <Product
+                key={item.id}
+                {...item}
+                addToShoppingCart={addToShoppingCart}
+              />
+            )
           })
         )}
       </div>
