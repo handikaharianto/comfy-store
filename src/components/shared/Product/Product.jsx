@@ -1,4 +1,5 @@
 import { FaSearch, FaShoppingCart } from 'react-icons/fa'
+import formatPrice from '../../../utils/formatPrice'
 
 function Product({ id, fields }) {
   const {
@@ -22,7 +23,7 @@ function Product({ id, fields }) {
       </div>
       <div className='product__body'>
         <h5 className='product__name'>{name}</h5>
-        <p className='product__price'>${price / 100}</p>
+        <p className='product__price'>${formatPrice(price)}</p>
       </div>
     </article>
   )
