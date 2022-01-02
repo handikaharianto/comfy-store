@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FaHome, FaCouch, FaBook, FaTimes } from 'react-icons/fa'
 
 function Sidebar({ isSidebarOpen, toggleSidebar }) {
@@ -10,22 +11,22 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
       <aside className='sidebar'>
         <ul className='sidebar__links'>
           <li>
-            <a className='sidebar__link' href='/'>
+            <Link className='sidebar__link' to='/'>
               <FaHome />
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a className='sidebar__link' href='/products'>
+            <Link className='sidebar__link' to='/products'>
               <FaCouch />
               Products
-            </a>
+            </Link>
           </li>
           <li>
-            <a className='sidebar__link' href='/about'>
+            <Link className='sidebar__link' to='/about'>
               <FaBook />
               About
-            </a>
+            </Link>
           </li>
         </ul>
         <button

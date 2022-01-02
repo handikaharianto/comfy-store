@@ -1,0 +1,18 @@
+.breadcrumb {
+  background-color: $light-gray;
+
+  &__path {
+    display: grid;
+    align-items: center;
+    height: 150px;
+    color: $gray;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.05em;
+
+    @include respond-to('small') {
+      font-size: 1.8rem;
+    }
+  }
+}

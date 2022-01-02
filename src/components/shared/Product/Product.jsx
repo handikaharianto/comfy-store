@@ -14,7 +14,7 @@ function Product({ id, fields, addToShoppingCart }) {
       <div className='product__top'>
         <img className='product__img' src={url} alt={name} />
         <div className='product__btns'>
-          <Link className='product__details-btn' to={`/products?id=${id}`}>
+          <Link className='product__details-btn' to={`/products/${id}`}>
             <FaSearch />
           </Link>
           <button

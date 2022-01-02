@@ -8,6 +8,7 @@ import Sidebar from './components/shared/Sidebar/Sidebar'
 import getData from './api/api'
 import ShoppingCart from './components/shared/ShoppingCart/ShoppingCart'
 import { getLocalStorage, updateLocalStorage } from './utils/localStorage'
+import Breadcrumb from './components/shared/Breadcrumb/Breadcrumb'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -133,6 +134,7 @@ function App() {
                 toggleShoppingCart={toggleShoppingCart}
                 totalCart={totalCart}
               />
+              <Breadcrumb products={products} />
             </>
           }
         />
@@ -145,11 +147,12 @@ function App() {
                 toggleShoppingCart={toggleShoppingCart}
                 totalCart={totalCart}
               />
+              <Breadcrumb products={products} />
             </>
           }
         />
         <Route
-          path='/products?id=:id'
+          path='/products/:id'
           element={
             <>
               <Navbar
@@ -157,6 +160,7 @@ function App() {
                 toggleShoppingCart={toggleShoppingCart}
                 totalCart={totalCart}
               />
+              <Breadcrumb products={products} />
             </>
           }
         />
