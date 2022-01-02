@@ -105,12 +105,12 @@ function App() {
   return (
     <>
       <Routes>
-        // Home
         <Route
           path='/'
           element={
             <>
               <Navbar
+                homepage={true}
                 toggleSidebar={toggleSidebar}
                 toggleShoppingCart={toggleShoppingCart}
                 totalCart={totalCart}
@@ -124,13 +124,11 @@ function App() {
             </>
           }
         />
-        // Products
         <Route
           path='/products'
           element={
             <>
               <Navbar
-                dark={true}
                 toggleSidebar={toggleSidebar}
                 toggleShoppingCart={toggleShoppingCart}
                 totalCart={totalCart}
@@ -138,13 +136,11 @@ function App() {
             </>
           }
         />
-        // About
         <Route
           path='/about'
           element={
             <>
               <Navbar
-                dark={true}
                 toggleSidebar={toggleSidebar}
                 toggleShoppingCart={toggleShoppingCart}
                 totalCart={totalCart}
@@ -152,13 +148,11 @@ function App() {
             </>
           }
         />
-        // Product Details
         <Route
           path='/products?id=:id'
           element={
             <>
               <Navbar
-                dark={true}
                 toggleSidebar={toggleSidebar}
                 toggleShoppingCart={toggleShoppingCart}
                 totalCart={totalCart}

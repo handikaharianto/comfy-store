@@ -1,6 +1,10 @@
 .navbar {
-  position: absolute;
+  position: relative;
   width: 100%;
+
+  &--homepage {
+    position: absolute;
+  }
 
   &__container {
     position: relative;
