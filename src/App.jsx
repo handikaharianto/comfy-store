@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts'
 import Hero from './components/Hero/Hero'
@@ -103,17 +104,69 @@ function App() {
 
   return (
     <>
-      <Navbar
-        toggleSidebar={toggleSidebar}
-        toggleShoppingCart={toggleShoppingCart}
-        totalCart={totalCart}
-      />
-      <Hero />
-      <FeaturedProducts
-        products={products}
-        isLoading={isLoading}
-        addToShoppingCart={addToShoppingCart}
-      />
+      <Routes>
+        // Home
+        <Route
+          path='/'
+          element={
+            <>
+              <Navbar
+                toggleSidebar={toggleSidebar}
+                toggleShoppingCart={toggleShoppingCart}
+                totalCart={totalCart}
+              />
+              <Hero />
+              <FeaturedProducts
+                products={products}
+                isLoading={isLoading}
+                addToShoppingCart={addToShoppingCart}
+              />
+            </>
+          }
+        />
+        // Products
+        <Route
+          path='/products'
+          element={
+            <>
+              <Navbar
+                dark={true}
+                toggleSidebar={toggleSidebar}
+                toggleShoppingCart={toggleShoppingCart}
+                totalCart={totalCart}
+              />
+            </>
+          }
+        />
+        // About
+        <Route
+          path='/about'
+          element={
+            <>
+              <Navbar
+                dark={true}
+                toggleSidebar={toggleSidebar}
+                toggleShoppingCart={toggleShoppingCart}
+                totalCart={totalCart}
+              />
+            </>
+          }
+        />
+        // Product Details
+        <Route
+          path='/products?id=:id'
+          element={
+            <>
+              <Navbar
+                dark={true}
+                toggleSidebar={toggleSidebar}
+                toggleShoppingCart={toggleShoppingCart}
+                totalCart={totalCart}
+              />
+            </>
+          }
+        />
+      </Routes>
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <ShoppingCart
         isShoppingCartOpen={isShoppingCartOpen}

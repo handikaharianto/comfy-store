@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FaSearch, FaShoppingCart } from 'react-icons/fa'
 import formatPrice from '../../../utils/formatPrice'
 
@@ -13,9 +14,9 @@ function Product({ id, fields, addToShoppingCart }) {
       <div className='product__top'>
         <img className='product__img' src={url} alt={name} />
         <div className='product__btns'>
-          <a className='product__details-btn' href={`/${id}`}>
+          <Link className='product__details-btn' to={`/products?id=${id}`}>
             <FaSearch />
-          </a>
+          </Link>
           <button
             className='product__cart-btn'
             type='button'
