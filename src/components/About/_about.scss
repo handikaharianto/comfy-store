@@ -1,0 +1,16 @@
+.about {
+  &__body {
+    max-width: 700px;
+    padding: 2.2em 0;
+  }
+
+  &__desc {
+    color: $gray;
+    font-size: 0.9rem;
+    line-height: 1.8;
+
+    @include respond-to('small') {
+      font-size: 1.03rem;
+    }
+  }
+}

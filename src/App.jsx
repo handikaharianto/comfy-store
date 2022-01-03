@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
+import { getLocalStorage, updateLocalStorage } from './utils/localStorage'
 import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts'
 import Hero from './components/Hero/Hero'
 import Navbar from './components/shared/Navbar/Navbar'
 import Sidebar from './components/shared/Sidebar/Sidebar'
-import useFetch from './hooks/useFetch'
 import ShoppingCart from './components/shared/ShoppingCart/ShoppingCart'
-import { getLocalStorage, updateLocalStorage } from './utils/localStorage'
 import Breadcrumb from './components/shared/Breadcrumb/Breadcrumb'
 import ProductDetails from './components/ProductDetails/ProductDetails'
+import About from './components/About/About'
+import useFetch from './hooks/useFetch'
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -140,6 +140,7 @@ function App() {
                 totalCart={totalCart}
               />
               <Breadcrumb products={products} />
+              <About />
             </>
           }
         />
