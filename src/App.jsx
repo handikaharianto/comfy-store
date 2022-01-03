@@ -5,24 +5,19 @@ import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts'
 import Hero from './components/Hero/Hero'
 import Navbar from './components/shared/Navbar/Navbar'
 import Sidebar from './components/shared/Sidebar/Sidebar'
-import getData from './api/api'
+import useFetch from './hooks/useFetch'
 import ShoppingCart from './components/shared/ShoppingCart/ShoppingCart'
 import { getLocalStorage, updateLocalStorage } from './utils/localStorage'
 import Breadcrumb from './components/shared/Breadcrumb/Breadcrumb'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [products, setProducts] = useState([])
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false)
   const [cartItems, setCartItems] = useState(getLocalStorage)
   const [totalCart, setTotalCart] = useState(0)
-
-  const fetchProducts = async (url) => {
-    const data = await getData(url)
-    setProducts(data)
-    setIsLoading(false)
-  }
+  const { data: products, isLoading } = useFetch(
+    'https://course-api.com/javascript-store-products'
+  )
 
   const toggleSidebar = () => {
     setIsSidebarOpen((currentSidebarState) => !currentSidebarState)
@@ -94,10 +89,6 @@ function App() {
       return updatedItems
     })
   }
-
-  useEffect(() => {
-    fetchProducts('https://course-api.com/javascript-store-products')
-  }, [])
 
   useEffect(() => {
     setTotalCart(cartItems.reduce((prev, current) => prev + current.amount, 0))
