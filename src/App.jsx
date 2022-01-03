@@ -9,6 +9,7 @@ import useFetch from './hooks/useFetch'
 import ShoppingCart from './components/shared/ShoppingCart/ShoppingCart'
 import { getLocalStorage, updateLocalStorage } from './utils/localStorage'
 import Breadcrumb from './components/shared/Breadcrumb/Breadcrumb'
+import ProductDetails from './components/ProductDetails/ProductDetails'
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -152,6 +153,7 @@ function App() {
                 totalCart={totalCart}
               />
               <Breadcrumb products={products} />
+              <ProductDetails addToShoppingCart={addToShoppingCart} />
             </>
           }
         />
