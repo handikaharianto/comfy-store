@@ -42,6 +42,12 @@
     margin-top: 1.5em;
     color: $white;
     font-size: 0.9rem;
+    transition: all 0.3s linear;
+
+    &:hover {
+      background-color: $white;
+      color: $brown;
+    }
   }
 
   @include respond-to('medium') {
