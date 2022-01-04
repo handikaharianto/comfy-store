@@ -4,13 +4,15 @@ import Form from '../Form/Form'
 import Loader from '../shared/Loader/Loader'
 import Product from '../shared/Product/Product'
 import Message from '../Message/Message'
+import { useShoppingCart } from '../../context/ShoppingCartContext'
 
-function Products({ products, isLoading, addToShoppingCart }) {
+function Products({ products, isLoading }) {
   const [inputText, setInputText] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [priceRange, setPriceRange] = useState(80)
   const [category, setCategory] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
+  const { addToShoppingCart } = useShoppingCart()
 
   const handleInputChange = (e) => {
     setInputText(e.target.value)

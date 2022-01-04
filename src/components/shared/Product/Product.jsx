@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { FaSearch, FaShoppingCart } from 'react-icons/fa'
 import formatPrice from '../../../utils/formatPrice'
+import { useShoppingCart } from '../../../context/ShoppingCartContext'
 
-function Product({ id, fields, addToShoppingCart }) {
+function Product({ id, fields }) {
+  const { addToShoppingCart } = useShoppingCart()
+
   const {
     name,
     price,

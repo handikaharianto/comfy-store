@@ -2,8 +2,9 @@ import { useParams } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import Loader from '../shared/Loader/Loader'
 import formatPrice from '../../utils/formatPrice'
+import { useShoppingCart } from '../../context/ShoppingCartContext'
 
-function ProductDetails({ addToShoppingCart }) {
+function ProductDetails() {
   const { id } = useParams()
   const {
     data: { fields },
@@ -11,6 +12,7 @@ function ProductDetails({ addToShoppingCart }) {
   } = useFetch(
     `https://course-api.com/javascript-store-single-product?id=${id}`
   )
+  const { addToShoppingCart } = useShoppingCart()
 
   if (isLoading)
     return (

@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import comfyLogoWhite from '../../../assets/comfy-logo-white.svg'
 import comfyLogoBlack from '../../../assets/comfy-logo-black.svg'
-
 import { FaBars, FaShoppingCart } from 'react-icons/fa'
+import { useShoppingCart } from '../../../context/ShoppingCartContext'
 
-function Navbar({ homepage, toggleSidebar, toggleShoppingCart, totalCart }) {
+function Navbar({ homepage, toggleSidebar }) {
+  const { toggleShoppingCart, totalCart } = useShoppingCart()
+
   return (
     <nav className={`navbar ${homepage ? 'navbar--homepage' : ''}`}>
       <div className='container navbar__container'>

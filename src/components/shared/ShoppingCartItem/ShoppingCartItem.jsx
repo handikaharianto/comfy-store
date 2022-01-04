@@ -1,14 +1,10 @@
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
+import { useShoppingCart } from '../../../context/ShoppingCartContext'
 import formatPrice from '../../../utils/formatPrice'
 
-function ShoppingCartItem({
-  id,
-  fields,
-  amount,
-  increaseAmount,
-  decreaseAmount,
-  removeCartItem,
-}) {
+function ShoppingCartItem({ id, fields, amount }) {
+  const { increaseAmount, decreaseAmount, removeCartItem } = useShoppingCart()
+
   const {
     name,
     price,

@@ -2,8 +2,11 @@ import Product from '../shared/Product/Product'
 import Section from '../shared/Section/Section'
 import Loader from '../shared/Loader/Loader'
 import { Link } from 'react-router-dom'
+import { useShoppingCart } from '../../context/ShoppingCartContext'
 
-function FeaturedProducts({ products, isLoading, addToShoppingCart }) {
+function FeaturedProducts({ products, isLoading }) {
+  const { addToShoppingCart } = useShoppingCart()
+
   return (
     <Section title='Featured' name='featured'>
       <div className='container featured__items'>
