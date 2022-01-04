@@ -2,10 +2,13 @@
   &__items {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     gap: 2em 1em;
     min-height: 250px;
     padding: 3em 0;
+
+    @include respond-to('small') {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
   }
 
   &__products-btn {
