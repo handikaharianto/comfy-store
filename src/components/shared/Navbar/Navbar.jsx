@@ -3,9 +3,11 @@ import comfyLogoWhite from '../../../assets/comfy-logo-white.svg'
 import comfyLogoBlack from '../../../assets/comfy-logo-black.svg'
 import { FaBars, FaShoppingCart } from 'react-icons/fa'
 import { useShoppingCart } from '../../../context/ShoppingCartContext'
+import { useSidebar } from '../../../context/SidebarContext'
 
-function Navbar({ homepage, toggleSidebar }) {
+function Navbar({ homepage }) {
   const { toggleShoppingCart, totalCart } = useShoppingCart()
+  const { toggleSidebar } = useSidebar()
 
   return (
     <nav className={`navbar ${homepage ? 'navbar--homepage' : ''}`}>

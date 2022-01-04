@@ -6,14 +6,17 @@ import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
 import { ProductProvider } from './context/ProductContext'
+import { SidebarProvider } from './context/SidebarContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <ProductProvider>
       <ShoppingCartProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <SidebarProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </SidebarProvider>
       </ShoppingCartProvider>
     </ProductProvider>
   </React.StrictMode>,

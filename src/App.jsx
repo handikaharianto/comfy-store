@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts'
 import Hero from './components/Hero/Hero'
@@ -11,12 +10,6 @@ import About from './components/About/About'
 import Products from './components/Products/Products'
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen((currentSidebarState) => !currentSidebarState)
-  }
-
   return (
     <>
       <Routes>
@@ -24,7 +17,7 @@ function App() {
           path='/'
           element={
             <>
-              <Navbar homepage={true} toggleSidebar={toggleSidebar} />
+              <Navbar homepage={true} />
               <Hero />
               <FeaturedProducts />
             </>
@@ -34,7 +27,7 @@ function App() {
           path='/products'
           element={
             <>
-              <Navbar toggleSidebar={toggleSidebar} />
+              <Navbar />
               <Breadcrumb />
               <Products />
             </>
@@ -44,7 +37,7 @@ function App() {
           path='/about'
           element={
             <>
-              <Navbar toggleSidebar={toggleSidebar} />
+              <Navbar />
               <Breadcrumb />
               <About />
             </>
@@ -54,14 +47,14 @@ function App() {
           path='/products/:id'
           element={
             <>
-              <Navbar toggleSidebar={toggleSidebar} />
+              <Navbar />
               <Breadcrumb />
               <ProductDetails />
             </>
           }
         />
       </Routes>
-      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar />
       <ShoppingCart />
     </>
   )

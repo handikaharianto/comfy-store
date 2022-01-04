@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { FaHome, FaCouch, FaBook, FaTimes } from 'react-icons/fa'
+import { useSidebar } from '../../../context/SidebarContext'
 
-function Sidebar({ isSidebarOpen, toggleSidebar }) {
+function Sidebar() {
+  const { isSidebarOpen, toggleSidebar } = useSidebar()
+
   return (
     <div
       className={`sidebar-overlay ${
