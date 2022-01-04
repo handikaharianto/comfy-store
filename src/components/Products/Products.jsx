@@ -29,7 +29,9 @@ function Products({ products, isLoading, addToShoppingCart }) {
       .filter((item) => {
         // filter based on product name
         const productName = item.fields.name
-        return productName.toLowerCase().includes(inputText.toLowerCase())
+        return productName
+          .toLowerCase()
+          .includes(inputText.toLowerCase().trim())
       })
       .filter((item) => {
         // filter based on company of product
