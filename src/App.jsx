@@ -10,6 +10,7 @@ import Breadcrumb from './components/shared/Breadcrumb/Breadcrumb'
 import ProductDetails from './components/ProductDetails/ProductDetails'
 import About from './components/About/About'
 import useFetch from './hooks/useFetch'
+import Products from './components/Products/Products'
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -127,6 +128,11 @@ function App() {
                 totalCart={totalCart}
               />
               <Breadcrumb products={products} />
+              <Products
+                products={products}
+                isLoading={isLoading}
+                addToShoppingCart={addToShoppingCart}
+              />
             </>
           }
         />
@@ -173,5 +179,3 @@ function App() {
 }
 
 export default App
-// https://course-api.com/javascript-store-products
-// https://course-api.com/javascript-store-single-product?id=rec43w3ipXvP28vog
