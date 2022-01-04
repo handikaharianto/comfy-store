@@ -8,14 +8,10 @@ import ShoppingCart from './components/shared/ShoppingCart/ShoppingCart'
 import Breadcrumb from './components/shared/Breadcrumb/Breadcrumb'
 import ProductDetails from './components/ProductDetails/ProductDetails'
 import About from './components/About/About'
-import useFetch from './hooks/useFetch'
 import Products from './components/Products/Products'
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const { data: products, isLoading } = useFetch(
-    'https://course-api.com/javascript-store-products'
-  )
 
   const toggleSidebar = () => {
     setIsSidebarOpen((currentSidebarState) => !currentSidebarState)
@@ -30,7 +26,7 @@ function App() {
             <>
               <Navbar homepage={true} toggleSidebar={toggleSidebar} />
               <Hero />
-              <FeaturedProducts products={products} isLoading={isLoading} />
+              <FeaturedProducts />
             </>
           }
         />
@@ -39,8 +35,8 @@ function App() {
           element={
             <>
               <Navbar toggleSidebar={toggleSidebar} />
-              <Breadcrumb products={products} />
-              <Products products={products} isLoading={isLoading} />
+              <Breadcrumb />
+              <Products />
             </>
           }
         />
@@ -49,7 +45,7 @@ function App() {
           element={
             <>
               <Navbar toggleSidebar={toggleSidebar} />
-              <Breadcrumb products={products} />
+              <Breadcrumb />
               <About />
             </>
           }
@@ -59,7 +55,7 @@ function App() {
           element={
             <>
               <Navbar toggleSidebar={toggleSidebar} />
-              <Breadcrumb products={products} />
+              <Breadcrumb />
               <ProductDetails />
             </>
           }

@@ -5,14 +5,17 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
+import { ProductProvider } from './context/ProductContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ShoppingCartProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ShoppingCartProvider>
+    <ProductProvider>
+      <ShoppingCartProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ShoppingCartProvider>
+    </ProductProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

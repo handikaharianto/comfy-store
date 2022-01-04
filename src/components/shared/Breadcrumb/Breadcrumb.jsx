@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import { useProduct } from '../../../context/ProductContext'
 
-function Breadcrumb({ products }) {
+function Breadcrumb() {
+  const { products } = useProduct()
   const { id } = useParams()
   let { pathname } = useLocation() // return the current pathname
   const [path, setPath] = useState('Home')

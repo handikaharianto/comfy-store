@@ -2,10 +2,10 @@ import Product from '../shared/Product/Product'
 import Section from '../shared/Section/Section'
 import Loader from '../shared/Loader/Loader'
 import { Link } from 'react-router-dom'
-import { useShoppingCart } from '../../context/ShoppingCartContext'
+import { useProduct } from '../../context/ProductContext'
 
-function FeaturedProducts({ products, isLoading }) {
-  const { addToShoppingCart } = useShoppingCart()
+function FeaturedProducts() {
+  const { products, isLoading } = useProduct()
 
   return (
     <Section title='Featured' name='featured'>
@@ -14,13 +14,7 @@ function FeaturedProducts({ products, isLoading }) {
           <Loader />
         ) : (
           products.slice(0, 3).map((item) => {
-            return (
-              <Product
-                key={item.id}
-                {...item}
-                addToShoppingCart={addToShoppingCart}
-              />
-            )
+            return <Product key={item.id} {...item} />
           })
         )}
       </div>

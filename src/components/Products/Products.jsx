@@ -4,15 +4,15 @@ import Form from '../Form/Form'
 import Loader from '../shared/Loader/Loader'
 import Product from '../shared/Product/Product'
 import Message from '../Message/Message'
-import { useShoppingCart } from '../../context/ShoppingCartContext'
+import { useProduct } from '../../context/ProductContext'
 
-function Products({ products, isLoading }) {
+function Products() {
   const [inputText, setInputText] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [priceRange, setPriceRange] = useState(80)
   const [category, setCategory] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
-  const { addToShoppingCart } = useShoppingCart()
+  const { products, isLoading } = useProduct()
 
   const handleInputChange = (e) => {
     setInputText(e.target.value)
@@ -60,7 +60,6 @@ function Products({ products, isLoading }) {
       ) : (
         <div className='container products__container'>
           <Form
-            products={products}
             handleInputChange={handleInputChange}
             handlePriceChange={handlePriceChange}
             updateProductCategory={updateProductCategory}
@@ -74,11 +73,7 @@ function Products({ products, isLoading }) {
               <Message />
             ) : (
               filteredProducts.map((item) => (
-                <Product
-                  key={item.id}
-                  {...item}
-                  addToShoppingCart={addToShoppingCart}
-                />
+                <Product key={item.id} {...item} />
               ))
             )}
           </section>

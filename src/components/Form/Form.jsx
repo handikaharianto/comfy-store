@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react'
+import { useProduct } from '../../context/ProductContext'
 
 function Form({
-  products,
   handleInputChange,
   handlePriceChange,
   updateProductCategory,
@@ -10,6 +10,8 @@ function Form({
   category,
   setCategory,
 }) {
+  const { products } = useProduct()
+
   const createProductCategory = useCallback(() => {
     setCategory(
       products.reduce(

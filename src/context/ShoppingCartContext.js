@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react'
 import { getLocalStorage, updateLocalStorage } from '../utils/localStorage'
 import formatPrice from '../utils/formatPrice'
+import { useProduct } from './ProductContext'
 
 const ShoppingCartContext = React.createContext()
 
@@ -9,6 +10,7 @@ function ShoppingCartProvider({ children }) {
   const [cartItems, setCartItems] = useState(getLocalStorage)
   const [totalCart, setTotalCart] = useState(0)
   const [totalPrice, setTotalPrice] = useState(0)
+  const { products } = useProduct()
 
   const toggleShoppingCart = () => {
     setIsShoppingCartOpen(
