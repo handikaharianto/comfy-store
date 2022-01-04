@@ -1,16 +1,18 @@
 import { useCallback, useEffect } from 'react'
 import { useProduct } from '../../context/ProductContext'
+import { useProductFilter } from '../../context/ProductFilter'
 
-function Form({
-  handleInputChange,
-  handlePriceChange,
-  updateProductCategory,
-  priceRange,
-  inputText,
-  category,
-  setCategory,
-}) {
+function Form() {
   const { products } = useProduct()
+  const {
+    handleInputChange,
+    handlePriceChange,
+    updateProductCategory,
+    priceRange,
+    inputText,
+    category,
+    setCategory,
+  } = useProductFilter()
 
   const createProductCategory = useCallback(() => {
     setCategory(
